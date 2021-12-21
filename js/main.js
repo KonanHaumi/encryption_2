@@ -68,7 +68,7 @@ function Gost(encryptKey) {
         return string;
     }
 
-    function exchangeChars(input) { //разделение 32-х битного блока на 4-х битные блоки + переводим блоки в hex и заменяем по таблице
+    function exchangeChars(input) { //разделение 32-х битного блока на 4-х битные блоки +  заменяем по таблице
         return parseInt(padString(input.toString(2), '0', 32).replace(/(....)/g, function (match) {
             return parseInt(match, 2).toString(16);
         }).split('').reverse().map(function (item, i) {
